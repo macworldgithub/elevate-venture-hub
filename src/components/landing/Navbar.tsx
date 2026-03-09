@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Shield } from "lucide-react";
 
 const navLinks = [
   { label: "Problem", href: "#problem" },
@@ -13,11 +13,14 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
       <div className="container flex h-14 items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="h-6 w-6 rounded-full border-2 border-primary flex items-center justify-center">
-            <div className="h-2 w-2 rounded-full bg-primary" />
-          </div>
-          <span className="font-display font-bold text-foreground">Britannica</span>
-          <span className="font-mono text-xs text-muted-foreground">/ Decentralized CRM</span>
+          {/* brand icon: shield from lucide-react */}
+          <Shield className="h-6 w-6 text-primary" />
+          <span className="font-display font-bold text-foreground">
+            Britannica
+          </span>
+          <span className="font-mono text-xs text-muted-foreground">
+            / Decentralized CRM
+          </span>
         </div>
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
