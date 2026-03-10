@@ -37,26 +37,36 @@ const TechnologySection = () => {
   return (
     <section id="technology" className="section-padding bg-secondary/30">
       <div className="container">
-        <p className="font-mono text-sm text-primary mb-2">Our Solution</p>
-        <p className="font-mono text-xs text-muted-foreground mb-4">Technology</p>
-        <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 max-w-3xl">
-          Five protocols, <br />
-          <span className="text-gradient">one cohesive platform</span>
-        </h2>
-        <p className="text-muted-foreground max-w-2xl mb-14">
-          Deep integration across the Sui ecosystem delivers capabilities no centralized CRM can match.
-        </p>
+        <div className="text-center mb-12">
+          <p className="font-mono text-xs text-primary mb-6 uppercase tracking-widest">
+            Technology
+          </p>
+          <h2 className="text-3xl md:text-5xl font-bold font-display mb-6 max-w-4xl mx-auto">
+            Five protocols, <br />
+            <span className="text-gradient">one cohesive platform</span>
+          </h2>
+          <p className="text-muted-foreground max-w-3xl mx-auto">
+            Deep integration across the Sui ecosystem delivers capabilities no
+            centralized CRM can match.
+          </p>
+        </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {protocols.map((p) => (
             <div
               key={p.name}
               className="rounded-xl border border-border bg-card p-8 card-shadow hover:border-primary/30 transition-colors group"
             >
               <p.icon className="h-8 w-8 text-primary mb-4 group-hover:scale-110 transition-transform" />
-              <h3 className="text-lg font-bold font-display text-foreground">{p.name}</h3>
-              <p className="text-sm text-primary font-mono mb-3">{p.subtitle}</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+              <h3 className="text-lg font-bold font-display text-foreground">
+                {p.name}
+              </h3>
+              <p className="text-sm text-primary font-mono mb-3">
+                {p.subtitle}
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {p.desc}
+              </p>
             </div>
           ))}
         </div>

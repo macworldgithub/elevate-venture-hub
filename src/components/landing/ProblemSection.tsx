@@ -25,27 +25,43 @@ const ProblemSection = () => {
   return (
     <section id="problem" className="section-padding">
       <div className="container">
-        <p className="font-mono text-sm text-primary mb-4">The Problem</p>
-        <h2 className="text-3xl md:text-5xl font-bold font-display mb-16 max-w-3xl">
-          Web3 teams deserve <br />
-          <span className="text-gradient">Web3-native tools</span>
-        </h2>
-        <p className="text-muted-foreground max-w-3xl mb-12 -mt-10">
-          Organizations building the decentralized future still rely on centralized, fragmented tools to manage their most valuable asset — community relationships.
-        </p>
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          {/* Left Column */}
+          <div>
+            <p className="font-mono text-sm text-primary mb-4">⚠ THE PROBLEM</p>
+            <h2 className="text-3xl md:text-5xl font-bold font-display mb-6">
+              Web3 teams deserve <br />
+              <span className="text-gradient">Web3-native tools</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl">
+              Organizations building the decentralized future still rely on
+              centralized, fragmented tools to manage their most valuable asset
+              — community relationships.
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {problems.map((p) => (
-            <div
-              key={p.num}
-              className="rounded-xl border border-border bg-card p-8 card-shadow hover:border-primary/30 transition-colors"
-            >
-              <span className="font-mono text-primary text-sm">{p.num}</span>
-              <p.icon className="h-8 w-8 text-primary mt-4 mb-4" />
-              <h3 className="text-xl font-bold font-display mb-3 text-foreground">{p.title}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
-            </div>
-          ))}
+          {/* Right Column */}
+          <div className="space-y-6">
+            {problems.map((p, index) => (
+              <div
+                key={p.num}
+                className={`rounded-xl border p-6 transition-colors ${
+                  index === 2
+                    ? "border-primary bg-card/50 card-shadow"
+                    : "border-border bg-card hover:border-primary/30"
+                }`}
+              >
+                <span className="font-mono text-primary text-sm">{p.num}</span>
+                <p.icon className="h-8 w-8 text-primary mt-3 mb-3" />
+                <h3 className="text-lg font-bold font-display mb-2 text-foreground">
+                  {p.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {p.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
